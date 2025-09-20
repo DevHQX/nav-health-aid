@@ -2,6 +2,7 @@ import { useState } from "react";
 import { LoginForm } from "@/components/login/login-form";
 import { Header } from "@/components/dashboard/header";
 import { MainDashboard } from "@/components/dashboard/main-dashboard";
+import { VideoConsultancyFlow } from "@/components/video-consultancy/video-consultancy-flow";
 
 const Index = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -70,10 +71,10 @@ const Index = () => {
         )}
         
         {currentSection === "video-consultancy" && (
-          <div className="container mx-auto px-4 py-6">
-            <h2 className="text-2xl font-bold mb-4">Video Consultancy</h2>
-            <p className="text-muted-foreground">Doctor selection and booking flow coming soon...</p>
-          </div>
+          <VideoConsultancyFlow 
+            language={selectedLanguage}
+            onNavigate={handleNavigate}
+          />
         )}
         
         {currentSection === "chatbot" && (
